@@ -22,8 +22,9 @@ class Solution(object):
         # Check if the count is greater than or equal to n
         return count >= n
 
-    flowerbed = [1, 0, 0, 0, 1]
-    n = [1, 2]
 
-    for i in n:
-        print(canPlaceFlowers(flowerbed, i))
+flowerbed = [1, 0, 0, 0, 1]
+n = [1, 2]
+
+for i in n:
+    print(Solution().canPlaceFlowers(flowerbed, i))
