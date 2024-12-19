@@ -1,4 +1,5 @@
 import os
+import time
 
 
 def delete_files(folder_path):
@@ -26,7 +27,10 @@ def delete_files(folder_path):
         print(f"Error accessing folder {folder_path}: {str(e)}")
         error_accessing += 1
     print(
-        f"\n=============== Logs ===============\nFolder: {folder_path}\nFiles deleted: {deleted_files}\nPermission denied: {permission_denied}\nError deleting: {error_deleting}\nError accessing: {error_accessing}"
+        f"\n=============== Logs ===============\nFolder: {folder_path}\nFiles deleted: {deleted_files}"
+    )
+    print(
+        f"---------- Errors ----------\nPermission denied: {permission_denied}\nError deleting: {error_deleting}\nError accessing: {error_accessing}"
     )
     print("Finished cleaning folder \n=============== End ===============")
 
@@ -36,6 +40,16 @@ def userName(user):
     return folders
 
 
-folders = userName("ZW")
-for folder in folders:
-    delete_files(folder)
+if __name__ == "__main__":
+    try:
+        folders = userName("ZW")
+        for folder in folders:
+            delete_files(folder)
+
+        print("\nCleaning complete! Exiting in 2 seconds...")
+        time.sleep(2)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        print("\nPress Enter to exit...")
+        input()
