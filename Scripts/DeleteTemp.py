@@ -45,9 +45,11 @@ if __name__ == "__main__":
         folders = userName("ZW")
         for folder in folders:
             delete_files(folder)
-
-        print("\nCleaning complete! Exiting in 2 seconds...")
-        time.sleep(2)
+        # setTime = 5
+        print(f"\nCleaning complete!")
+        # time.sleep(setTime)
+        print("Press Enter to exit...")
+        input()
 
     except Exception as e:
         print(f"An error occurred: {e}")
