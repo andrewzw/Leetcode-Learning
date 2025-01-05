@@ -54,8 +54,6 @@ def twoPointer(arr):
 
 twoPointer(arr1)
 
-s = "hello ken"
-
 
 def splitJoin(s):
     s = s.split(" ")
@@ -63,13 +61,22 @@ def splitJoin(s):
     for word in s:
         curr_word = str(len(word)) + "#" + word
         joined += curr_word
+
+    curr_word = ""
+    count = 0
+    for char in joined:
+        if char.isdigit():
+            count = int(char)
+
+        if char.isalpha():
+            curr_word += char
+            count -= 1
+            if count == 0:
+                curr_word += " "
+
     print(joined)
-
-    unjoined = ""
-    for word in s:
-        curr_word = word.split("#")
-        unjoined += curr_word[0] + " "
-    print(unjoined)
+    print(curr_word)
 
 
+s = "hello ken kk"
 splitJoin(s)
