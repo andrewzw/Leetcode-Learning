@@ -21,16 +21,15 @@ def superDigit(n, k):
 
 # simpler version
 def superDigit(n, k):
-
-    sum = 0
     digits_len = len(str(n))
-
     if digits_len == 1:
         return n
 
+    sum = 0
     for num in str(n):
         sum += int(num)
     sum = sum * k
+
     return superDigit(sum, 1)
 
 
