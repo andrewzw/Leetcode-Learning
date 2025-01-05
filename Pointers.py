@@ -53,3 +53,23 @@ def twoPointer(arr):
 
 
 twoPointer(arr1)
+
+s = "hello ken"
+
+
+def splitJoin(s):
+    s = s.split(" ")
+    joined = ""
+    for word in s:
+        curr_word = str(len(word)) + "#" + word
+        joined += curr_word
+    print(joined)
+
+    unjoined = ""
+    for word in s:
+        curr_word = word.split("#")
+        unjoined += curr_word[0] + " "
+    print(unjoined)
+
+
+splitJoin(s)
