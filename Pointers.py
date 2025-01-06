@@ -53,3 +53,34 @@ def twoPointer(arr):
 
 
 twoPointer(arr1)
+
+
+def encodedWord(s):
+    s = s.split(" ")
+    joined = ""
+
+    for word in s:
+        joined += f"{len(word)}#{word}"
+    print("Encoded:", joined)
+    return joined
+
+
+def decodedWord(s):
+    curr_word = ""
+    count = 0
+
+    for char in s:
+        if char.isdigit():
+            count = int(char)
+
+        if char.isalpha():
+            curr_word += char
+            count -= 1
+            if count == 0:
+                curr_word = f"{curr_word} "
+
+    print("Decoded:", curr_word)
+
+
+s = "hello ken kk"
+decodedWord(encodedWord(s))
