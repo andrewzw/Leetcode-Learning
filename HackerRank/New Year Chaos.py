@@ -48,7 +48,9 @@ def minimumBribes(q):
 
             elif(q[i-2] == i+1):
                 print('q[i-2]:', q[i-2], '\n')
-                q[i],q[i-1],q[i-2] = q[i-2],q[i], q[i-1] 
+                # Example : 2 1 5 3 4, 2 1 3 4 5
+                q[i],q[i-1], q[i-2]= q[i-2], q[i], q[i-1]
+
                 bribes += 2
             else:
                 return("Too chaotic")
