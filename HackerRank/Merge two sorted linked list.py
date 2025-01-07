@@ -70,6 +70,30 @@ def mergeLists(head1, head2):
     return result.head
 
 
+def mergeLists(head1, head2):
+    # Create dummy node to avoid edge cases
+    dummy = SinglyLinkedListNode(0)
+    current = dummy
+
+    # Compare and link nodes
+    while head1 and head2:
+        if head1.data <= head2.data:
+            current.next = head1  # add node to list
+            head1 = head1.next  # set next node as current node
+        else:
+            current.next = head2
+            head2 = head2.next
+        current = current.next
+
+    # Attach remaining nodes
+    if head1:
+        current.next = head1
+    if head2:
+        current.next = head2
+
+    return dummy.next
+
+
 # list1 = [1, 2, 3]
 # llist1 = SinglyLinkedList()
 # for i in list1:
