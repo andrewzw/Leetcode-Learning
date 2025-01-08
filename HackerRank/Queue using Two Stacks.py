@@ -55,3 +55,37 @@ for i in range(n):
         queue.pop(0)
     elif query == '3':
         print(queue[0])
+
+
+class Queue:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+        
+    def enqueue(self, x):
+        self.stack1.append(x)
+    
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2.pop()
+    
+    def printqueue(self):
+        if self.stack2:
+            print(self.stack2[-1])
+        else:
+            print(self.stack1[0])
+            
+if __name__ == "__main__":
+    queue = Queue()
+    n = int(input())
+    for _ in range(n):
+        query = input().strip().split()
+        command = int(query[0])
+        if command == 1:
+            queue.enqueue(int(query[1]))
+        elif command == 2:
+            queue.dequeue()
+        elif command == 3:
+            queue.printqueue()
