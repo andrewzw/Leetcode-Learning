@@ -9,10 +9,13 @@ class Solution:
         )  # sort using first item of interval as sorting key
 
         for item in intervals:
+            # if results is empty
+            # or if last item'ending is less than first item's starting
             if not results or results[-1][1] < item[0]:
                 results.append(item)
 
             else:
+                # manipulate last item using starting of previous item and max of ending of both items
                 results[-1] = [results[-1][0], max(results[-1][1], item[1])]
 
         return results
