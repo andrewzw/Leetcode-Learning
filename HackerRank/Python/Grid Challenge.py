@@ -33,6 +33,6 @@ def gridChallenge(grid):
     return "YES"
 
 
-grid = ["ebacd", "fghij", "olmkn", "trpqs", "xywuv"]
+grid = ["ebacd", "fghij", "olmkn", "trpqs", "xywuv"]  # "YES"
 grid = ["abc", "lmp", "qrt"]  # "YES"
 print(gridChallenge(grid))

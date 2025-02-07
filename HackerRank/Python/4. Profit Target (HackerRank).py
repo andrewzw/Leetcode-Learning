@@ -4,10 +4,10 @@ def stockPairs(stocksProfit, target):
     n = len(stocksProfit)
     left, right = 0, n - 1
     pairs = set()
-    print(stocksProfit)
+    # print(stocksProfit)
     while left < right:
         sum = stocksProfit[left] + stocksProfit[right]
-        print((stocksProfit[left], stocksProfit[right]))
+        # print((stocksProfit[left], stocksProfit[right]))
         if sum == target:
             pairs.add((stocksProfit[left], stocksProfit[right]))
             left += 1
@@ -24,4 +24,4 @@ stockProfit = [5, 7, 9, 13, 11, 6, 6, 3, 3]
 target = 12
 
 
-# stockPairs(stockProfit, target)
+stockPairs(stockProfit, target)
